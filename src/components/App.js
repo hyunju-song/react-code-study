@@ -7,11 +7,11 @@ import { fakeData } from "./__test__/fakeData";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
-      currentVideo: fakeData[0],
+      currentVideo: null,
       data: fakeData,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(video) {
@@ -20,6 +20,7 @@ class App extends React.Component {
       // {기존의값 : 변경 될 값}
       currentVideo: video
     })
+    //console.log(video)
   }
 
   render() {
@@ -27,10 +28,11 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer video={this.state.currentVideo}/>
+          <VideoPlayer video={this.state.currentVideo || fakeData[0]}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.data} click={this.handleClick}/>
+          <VideoList videos={this.state.data} 
+          click={this.handleClick}/>
         </div>
       </div>
     )

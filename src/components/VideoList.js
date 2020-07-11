@@ -5,13 +5,14 @@ import VideoListEntry from './VideoListEntry';
 import { fakeData } from './__test__/fakeData';
 console.log(fakeData)
 
-const VideoList = ({videos, handleClick}) => {
-  // const videos = props.videos;
+const VideoList = (props) => {
+  const videos = props.videos;
   const videoList = videos.map((video) => (
       <VideoListEntry 
-      click = {handleClick}
       video = {video}
-      key = {video.id.videoId} />
+      key = {video.id.videoId} 
+      click = {props.click}
+      />
   ));
   return <div className="video-list media">
     {videoList}
