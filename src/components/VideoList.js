@@ -5,18 +5,16 @@ import VideoListEntry from './VideoListEntry';
 import { fakeData } from './__test__/fakeData';
 console.log(fakeData)
 
-const VideoList = () => (
-  <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
+const VideoList = (props) => {
+  const videos = props.videos;
+  const videoList = videos.map((video) => (
+      <VideoListEntry 
+      video = {video}
+      key = {video.id.videoId} />
+  ));
+  return <div className="video-list media">
+    {videoList}
   </div>
-);
+};
 
 export default VideoList;
