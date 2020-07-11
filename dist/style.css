@@ -72,3 +72,10 @@ body {
   color: #999;
 }
 
+/* 추가 */
+.col-md-5 {
+  max-width: 100%;
+}
+.col-md-5 .media-object {
+  max-width: 160px;
+}
