@@ -5,11 +5,11 @@ import VideoListEntry from './VideoListEntry';
 import { fakeData } from './__test__/fakeData';
 console.log(fakeData)
 
-const VideoList = ({videos, handleClick}) => {
+const VideoList = ({videos, click}) => {
   // const videos = props.videos;
   const videoList = videos.map((video) => (
       <VideoListEntry 
-      click = {handleClick}
+      click = {click}
       video = {video}
       key = {video.id.videoId} />
   ));
