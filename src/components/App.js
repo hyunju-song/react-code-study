@@ -20,13 +20,18 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getYouTubeVideos("cats");
+    if (JSON.parse(localStorage.getItem("watchLater") !== null)) {
+      this.setState({
+        watchLater: JSON.parse(localStorage.getItem("watchLater"))
+      })
+    }
   }
 
   getYouTubeVideos(query) {
     var options = {
       key: YOUTUBE_API_KEY,
       query: query
-    };
+  };
 
     searchYouTube(options, videos =>
       this.setState({
@@ -45,12 +50,20 @@ class App extends React.Component {
   handleWatchLaterButtonClick(video) {
     if(this.state.watchLater.includes(video)){
       return;
-    }
-    else{
+    } else{
+      localStorage.setItem('watchLater', JSON.stringify(this.state.watchLater));
       this.setState({
         watchLater: this.state.watchLater.concat(video)
       });
     }
+  }
+
+  watchLaterDelete(video){
+    let removeIndex = this.state.watchLater.indexOf(video)
+    this.state.watchLater.splice(removeIndex,1)
+    this.setState({
+      watchLater: this.state.watchLater
+    })
   }
 
   render() {
@@ -74,6 +87,7 @@ class App extends React.Component {
             //함수이름={this.함수이름.bind(this)  
             videos={this.state.watchLater}
             handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
+            watchLaterDelete ={this.watchLaterDelete.bind(this)}
           />
         </div>
       </div>

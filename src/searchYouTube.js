@@ -12,7 +12,7 @@ export const searchYouTube = ({ query, max=5, key }, callback) => {
   */
   
   fetch(
-    `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${query}&maxResult=${max}&type=video&videoEmbeddable=true&`,
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${query}&maxResult=${max}&type=video&videoEmbeddable=true`,
     {
       method: "GET"
     }

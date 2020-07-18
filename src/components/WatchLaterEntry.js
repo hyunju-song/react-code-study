@@ -1,7 +1,9 @@
 import React from 'react';
 
-const WatchLasterEntry = ({ video, handleVideoListEntryTitleClick }) => (
+const WatchLasterEntry = ({ video, handleVideoListEntryTitleClick,watchLaterDelete }) => (
   <div className="watch-later-entry">
+    <button 
+      onClick={()=> watchLaterDelete(video)}>❌</button>
     <div className="media-left media-middle">
       <img
         className="media-object"
