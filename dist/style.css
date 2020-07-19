@@ -73,6 +73,11 @@ body {
 }
 
 /* 추가 */
+.watch-later-title{
+  font-size: 25px;
+  font-weight: bolder;
+  font-style: italic;
+}
 .watch-later {
   position: absolute;
   width: 38%;

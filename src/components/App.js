@@ -15,7 +15,6 @@ class App extends React.Component {
       videos: [],
       watchLater: [],
     };
-    //this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -83,6 +82,7 @@ class App extends React.Component {
           />
         </div>
         <div className="watch-later">
+        <div className="watch-later-title">Watch Later List</div>
           <WatchLater
             //함수이름={this.함수이름.bind(this)  
             videos={this.state.watchLater}
