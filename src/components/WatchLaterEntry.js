@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WatchLasterEntry = ({ video, handleVideoListEntryTitleClick,watchLaterDelete }) => (
+const WatchLaterEntry = ({ video, handleVideoListEntryTitleClick,watchLaterDelete }) => (
   <div className="watch-later-entry">
     <button 
       onClick={()=> watchLaterDelete(video)}>❌</button>
@@ -24,4 +24,4 @@ const WatchLasterEntry = ({ video, handleVideoListEntryTitleClick,watchLaterDele
   </div>
 );
 
-export default WatchLasterEntry;
+export default WatchLaterEntry;

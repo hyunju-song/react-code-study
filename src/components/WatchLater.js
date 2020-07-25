@@ -1,5 +1,5 @@
 import React from 'react';
-import WatchLasterEntry from './WatchLaterEntry';
+import WatchLaterEntry from './WatchLaterEntry';
 
 const WatchLater = ({ videos, handleVideoListEntryTitleClick,watchLaterDelete }) => (
   <div className="watch-later-list">
